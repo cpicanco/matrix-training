@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllables and Words Tables</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="selected-syllables-container">
+        <h2>Syllables</h2>
+        <table id="syllableTable"></table>
+
+        <h3>Selected Syllables Order</h3>
+        <div id="selectedSyllables" class="selected-syllables"></div>
+        <div class="controls">
+            <label><input type="checkbox" id="customOrderToggle">Enable custom row/column order</label>
+        </div>
+        <div id="customOrderContainer" style="display:none; margin-top:15px;">
+            <h4>Row Order</h4>
+            <div id="syllablesRowContainer" class="order-list"></div>
+            <h4>Column Order</h4>
+            <div id="syllablesColContainer" class="order-list"></div>
+        </div>
+    </div>
+
+    <div class="words-container">
+        <h2>Words</h2>
+        <div class="controls">
+            <label for="highlightMode">Word Highlight Style:</label>
+            <select id="highlightMode">
+                <option value="all">Words with at least one selected syllable</option>
+                <option value="both">Words with at least two selected syllables</option>
+                <option value="different">Words with different syllables</option>
+                <option value="different-consonants">Words with two different consoants</option>
+                <option value="different-vowels">Words with two different vowels</option>
+                <option value="isograms">Isograms (two different consoants and vowels)</option>
+                <option value="hanna">Exactly as in Hanna et al (2011)</option>
+                <option value="hanna_generalized">Like Hanna et al (2011), but with selected syllables</option>
+            </select>
+        </div>
+        <table id="wordsTable"></table>
+    </div>
+
+    <div class="protocol-container">
+        <h2>Protocol</h2>
+        <h3>Settings</h3>
+        <div class="controls">
+            <label for="cycles">Number of Cycles:</label>
+            <input type="number" id="cycles" min="1" value="3">
+            <label for="wordsPerCycle">Words per Cycle:</label>
+            <input type="number" id="wordsPerCycle" min="1" value="5">
+        </div>
+
+        <h3>Teaching Protocol</h3>
+        <table id="protocolTable"></table>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
